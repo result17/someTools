@@ -11,13 +11,15 @@
         }
       },
       set: function(target, name, value) {
-        const temp = name
+        const temp = name, len = target.length
         name = Number(name)
         if (Number.isNaN(name) || !Number.isInteger(name) || name >= 0) {
           return Reflect.set(target, temp, value)
         } else {
-          target[target.length + name] = value
-          return target[target.length + name]
+          // 负数索引越界返回undefined
+          if (name < -len) return undefined
+          target[len + name] = value
+          return target[len + name]
         }
       }
     }
@@ -28,7 +30,7 @@
   function shuffle() {
     for (let i = this.length; i; i--) {
       let rand = Math.floor(Math.random() * i)
-      [this[i - 1], this[rand]] = [this[rand], this[i - 1]]
+      ;[this[i - 1], this[rand]] = [this[rand], this[i - 1]]
     }
   }
   
