@@ -27,3 +27,5 @@ for (let i = 0; i < arr.length; i++) {
 ## open with code
 在朋友电脑上右键文件夹菜单栏有open with code，可以直接用vs code打开文件夹，比较方便，在网上找到实现，就是仓库的code.reg(仅限windows系统)。
 将你电脑上的vs code路径替换C:\\Program Files\\Microsoft VS Code\\Code.exe\。注意是两个反斜杆。保存后，并双击运行即可。
+## 简繁体切换
+拿别人的简繁体切换做了一下小改动，符号es6 module。
